@@ -53,6 +53,12 @@ public class Player : MonoBehaviour
         this.enabled = false;
 
         // TODO nächsten vogel anlegen
+        yield return new WaitForSeconds(2.0f);
+
+        if (nextBirdPrefab != null )
+        {
+            nextBirdPrefab.SetActive(true);
+        }
 
     }
 
