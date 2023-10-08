@@ -26,6 +26,16 @@ public class GameManager : MonoBehaviour
         GameOver = false;
     }
 
+
+    private void SetStarsAmount(int stars, int levelIndex)
+    {
+        if (PlayerPrefs.GetInt("level" + levelIndex.ToString() + "stars", 0) < stars)
+        {
+            PlayerPrefs.SetInt("level" + levelIndex.ToString() + "stars", stars);
+        }  
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -35,19 +45,28 @@ public class GameManager : MonoBehaviour
             EndingScreen.SetActive(true);
 
 
+            int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
             if (enemyCount <= 2) { 
             start1.sprite = goldenStar;
+                SetStarsAmount(1, currentLevel);
             }
 
             if (enemyCount <= 1)
             {
                 start2.sprite = goldenStar;
+                SetStarsAmount(2, currentLevel);
             }
 
             if (enemyCount <= 0)
             {
                 start3.sprite = goldenStar;
+                SetStarsAmount(3, currentLevel);
+                PlayerPrefs.SetInt("levelbeaten", currentLevel);
             }
+
+            Enemy.EnemiesAlive = 0;
+            GameOver = false;
 
         }
     }

@@ -1550,7 +1550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593b33c344dadfb48b8941943b3c8801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockButton: {fileID: 919760728}
+  lockButton:
+  - {fileID: 919760728}
   level1Star:
   - {fileID: 2067762652}
   - {fileID: 202560141}
