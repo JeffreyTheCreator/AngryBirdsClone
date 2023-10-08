@@ -23,6 +23,7 @@ public class MainMenu : MonoBehaviour
             if (levelbeaten > 0)
             {
                 lockButton[i].SetActive(false);
+                i++;
             }
         }
     }
