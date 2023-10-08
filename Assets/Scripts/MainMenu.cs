@@ -30,7 +30,6 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         DeactivateLockButtons();
 
         int i = 0;
@@ -43,7 +42,7 @@ public class MainMenu : MonoBehaviour
         i = 0;
         while (PlayerPrefs.GetInt("level2stars", 0) != i)
         {
-            level1Star[i].sprite = goldenStar;
+            level2Star[i].sprite = goldenStar;
             i++;
         }
 
