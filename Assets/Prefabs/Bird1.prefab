@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3735349529333426704}
   - component: {fileID: 5133940384665306704}
   - component: {fileID: 4059620625273442691}
+  - component: {fileID: 3157492707506857262}
   m_Layer: 0
   m_Name: Bird1
   m_TagString: Untagged
@@ -166,9 +167,9 @@ SpringJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0.05100012, y: 0.049999997}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.07142137
+  m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 1.5
 --- !u!114 &4059620625273442691
@@ -188,3 +189,27 @@ MonoBehaviour:
   releasTime: 0.15
   maxDragDistance: 2
   nextBirdPrefab: {fileID: 0}
+  anim: {fileID: 3157492707506857262}
+  flyingAnim: {fileID: 7400000, guid: aa5db1b7fc6e7fa40bd434024ca62129, type: 2}
+  deadAnim: {fileID: 7400000, guid: f155e3ca901f97f478557f0e52553de6, type: 2}
+--- !u!95 &3157492707506857262
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8924369373075883793}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9387a5ebe51b1a04bade75ca2ae34df8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

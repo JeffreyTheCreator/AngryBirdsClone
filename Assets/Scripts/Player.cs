@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     public GameObject nextBirdPrefab;
     private bool isPressed = false;
 
+    public Animator anim;
+    public AnimationClip flyingAnim;
+    public AnimationClip deadAnim;
+
   
     // Update is called once per frame
     void Update()
@@ -42,7 +46,10 @@ public class Player : MonoBehaviour
         rb.isKinematic = false;
 
         StartCoroutine(Release());
-
+        if (anim != null)
+        {
+            anim.Play(flyingAnim.name);
+        }
     }
 
     IEnumerator Release()
