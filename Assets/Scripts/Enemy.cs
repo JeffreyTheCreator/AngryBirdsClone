@@ -20,6 +20,21 @@ public class Enemy : MonoBehaviour
         if (collision.relativeVelocity.magnitude > health)
         {
             Die();
+            if (EnemiesAlive <= 0)
+            {
+                if (GameManager.GM == null)
+                {
+                    return;
+                } 
+
+                if (GameManager.GM.EndingScreen.activeSelf == true )
+                {
+                    return;
+                }
+
+                GameManager.GM.GameOver = true;
+
+            }
         }
 
     }

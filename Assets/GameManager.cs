@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,5 +50,17 @@ public class GameManager : MonoBehaviour
             }
 
         }
+    }
+
+
+    public void onClickMenuButton()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+
+    public void onClickRestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -16,7 +16,16 @@ public class Player : MonoBehaviour
     public AnimationClip flyingAnim;
     public AnimationClip deadAnim;
 
-  
+    public int playersLeft = 0;
+    private bool lastPlayer;
+
+
+    private void Start()
+    {
+        lastPlayer = false;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -65,8 +74,38 @@ public class Player : MonoBehaviour
         if (nextBirdPrefab != null )
         {
             nextBirdPrefab.SetActive(true);
+        } else
+        {
+            lastPlayer = true;
         }
+        yield return new WaitForSeconds(2.0f);
+        StartCoroutine(RemoveBird());
 
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (anim != null)
+        {
+            anim.Play(deadAnim.name);
+            StartCoroutine(RemoveBird());
+        }
+    }
+
+    IEnumerator RemoveBird()
+    {
+        yield return new WaitForSeconds (3.0f);
+        Destroy(gameObject);
+
+        if (lastPlayer )
+        {
+            if (GameManager.GM != null && GameManager.GM.EndingScreen.activeSelf != true)
+            {
+                GameManager.GM.GameOver = true;
+            }
+            {
+            }
+        }
+
+    }
 }
